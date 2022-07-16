@@ -33,18 +33,18 @@ const updateUser = (req, res) => {
 exports.updateUser = updateUser;
 const deteleUser = (req, res) => {
     const { id } = req.params;
+    User_1.default.removeService(id, res);
 };
 exports.deteleUser = deteleUser;
 const getListUser = (req, res) => {
     try {
-        const handleDatabase = listuser_json_1.default.map((item) => {
-            const newUser = Object.assign(Object.assign({}, item), { password: "" });
-            const newDatabase = [...[], newUser];
+        const newDatabase = [];
+        listuser_json_1.default.map((item) => {
+            const newItem = Object.assign(Object.assign({}, item), { password: "" });
+            newDatabase.push(newItem);
             return newDatabase;
         });
-        res
-            .status(IEnum_1.default.Success)
-            .send({ messageApi: Message_1.messageApi, data: handleDatabase });
+        res.status(IEnum_1.default.Success).send({ messageApi: Message_1.messageApi, data: newDatabase });
     }
     catch (err) {
         res.status(IEnum_1.default.ErrorSever).send(err);

@@ -20,17 +20,17 @@ const updateUser = (req: Request, res: Response) => {
 };
 const deteleUser = (req: Request, res: Response) => {
   const { id } = req.params;
+  userService.removeService(id, res);
 };
 const getListUser = (req: Request, res: Response) => {
   try {
-    const handleDatabase = database.map((item: IUser) => {
-      const newUser = { ...item, password: "" };
-      const newDatabase = [...[], newUser];
+    const newDatabase: object[] = [];
+    database.map((item) => {
+      const newItem = { ...item, password: "" };
+      newDatabase.push(newItem);
       return newDatabase;
     });
-    res
-      .status(NumberMessage.Success)
-      .send({ messageApi, data: handleDatabase });
+    res.status(NumberMessage.Success).send({ messageApi, data: newDatabase });
   } catch (err: unknown) {
     res.status(NumberMessage.ErrorSever).send(err as string);
   }
