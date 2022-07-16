@@ -1,0 +1,16 @@
+[
+    {
+        "userName": "vaytaisao123",
+        "userEmail": "trung@gmail.com",
+        "password": "$2b$10$wP6J6t4JUta9M2txHGuUBeSu29uHMfdlypYOi1ddU0vzRVmODLHHu",
+        "role": "hocsinh",
+        "id": "1657908334962"
+    },
+    {
+        "userName": "vaytaisao12334444",
+        "userEmail": "trung@gmail.com",
+        "password": "$2b$10$sL4DOrWXfnDZD0Drb6qlYuANNaaKDIzUfgVuoxNiOVA7qLGfxdqbO",
+        "role": "hocsinh",
+        "id": "1657908359234"
+    }
+]
