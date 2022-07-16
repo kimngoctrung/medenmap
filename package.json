@@ -18,8 +18,11 @@
     "ts-node-dev": "^2.0.0"
   },
   "scripts": {
-    "start": "node dist/app.js ",
+    "start": "node dist/app.js",
     "dev": "nodemon src/app.ts",
     "build": "tsc"
+  },
+  "engines": {
+    "node": "16.14.0"
   }
 }
