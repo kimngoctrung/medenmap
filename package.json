@@ -19,8 +19,7 @@
   },
   "scripts": {
     "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts",
-    "build": "tsc"
+    "dev": "nodemon src/app.ts"
   },
   "engines": {
     "node": "16.14.0"
