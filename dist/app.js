@@ -12,8 +12,8 @@ const pathPublicDirectory = path_1.default.join(__dirname, "./public");
 app.use("/public", express_1.default.static(pathPublicDirectory));
 app.use(express_1.default.json());
 dotenv_1.default.config({ path: "./src/config/.env" });
-const port = process.env.port;
+const PORT = process.env.PORT || 5000;
 app.use("/v1", rooter_router_1.default);
-app.listen(port, () => {
-    console.log(`Application Listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Application Listening at http://localhost:${PORT}`);
 });

@@ -4,7 +4,6 @@
     "bcrypt": "^5.0.1",
     "dotenv": "^16.0.1",
     "nodemon": "^2.0.19",
-    "tsc": "^2.0.4",
     "typescript": "^4.7.4"
   },
   "name": "day-10",
@@ -18,10 +17,6 @@
     "ts-node-dev": "^2.0.0"
   },
   "scripts": {
-    "start": "node dist/app.js",
     "dev": "nodemon src/app.ts"
-  },
-  "engines": {
-    "node": "16.14.0"
   }
 }
