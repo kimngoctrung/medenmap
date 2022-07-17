@@ -13,9 +13,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.userLogin = exports.getDetailUser = exports.getListUser = exports.deteleUser = exports.updateUser = exports.creatUser = void 0;
-const listuser_json_1 = __importDefault(require("../listuser.json"));
-const IEnum_1 = __importDefault(require("../Model/Status/IEnum"));
-const Message_1 = require("../Model/Status/Message");
 const User_1 = __importDefault(require("../service/User"));
 const creatUser = (req, res) => {
     const user = req.body;
@@ -37,18 +34,7 @@ const deteleUser = (req, res) => {
 };
 exports.deteleUser = deteleUser;
 const getListUser = (req, res) => {
-    try {
-        const newDatabase = [];
-        listuser_json_1.default.map((item) => {
-            const newItem = Object.assign(Object.assign({}, item), { password: "" });
-            newDatabase.push(newItem);
-            return newDatabase;
-        });
-        res.status(IEnum_1.default.Success).send({ messageApi: Message_1.messageApi, data: newDatabase });
-    }
-    catch (err) {
-        res.status(IEnum_1.default.ErrorSever).send(err);
-    }
+    User_1.default.getListUserService(res);
 };
 exports.getListUser = getListUser;
 const getDetailUser = (req, res) => {

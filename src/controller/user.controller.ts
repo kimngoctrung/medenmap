@@ -5,7 +5,6 @@ import { IUser } from "../Model/User/IUser";
 import NumberMessage from "../Model/Status/IEnum";
 import { messageApi } from "../Model/Status/Message";
 import userService from "../service/User";
-
 const creatUser = (req: Request, res: Response) => {
   const user: IUser = req.body;
   const createId = Date.now();
@@ -23,17 +22,7 @@ const deteleUser = (req: Request, res: Response) => {
   userService.removeService(id, res);
 };
 const getListUser = (req: Request, res: Response) => {
-  try {
-    const newDatabase: object[] = [];
-    database.map((item) => {
-      const newItem = { ...item, password: "" };
-      newDatabase.push(newItem);
-      return newDatabase;
-    });
-    res.status(NumberMessage.Success).send({ messageApi, data: newDatabase });
-  } catch (err: unknown) {
-    res.status(NumberMessage.ErrorSever).send(err as string);
-  }
+  userService.getListUserService(res);
 };
 const getDetailUser = (req: Request, res: Response) => {
   const { id } = req.params;
